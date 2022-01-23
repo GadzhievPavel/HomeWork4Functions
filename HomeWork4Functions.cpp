@@ -117,6 +117,14 @@ void playingCard() {
     }
 }
 
+void date() {
+    int startYear, startMonth, startDay, endYear, endMonth, endDay;
+    cout << "¬ведите год, пор€дковый номер мес€ца и день начала периода.";
+    cin >> startYear >> startMonth >> startDay;
+    cout << "¬ведите год, пор€дковый номер мес€ца и день окончани€ периода.";
+    cin >> endYear >> endMonth >> endDay;
+}
+
 
 int main()
 {
