@@ -117,24 +117,18 @@ void playingCard() {
     }
 }
 
-void date() {
-    int startYear, startMonth, startDay, endYear, endMonth, endDay, int sumDay = 0;
-    cout << "Введите год, порядковый номер месяца и день начала периода.";
-    cin >> startYear >> startMonth >> startDay;
-    cout << "Введите год, порядковый номер месяца и день окончания периода.";
-    cin >> endYear >> endMonth >> endDay;
-    for (int i = startYear + 1; i < endYear; i++) {
-        if (LeapYear)
-            sumDay += 366;
-        sumDay += 365;
+void quantity(int arr[], const int size) {
+int null = 0, positive = 0, negative = 0;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == 0) null++;
+        if (arr[i] > 0) positive++;
+        if (arr[i] < 0) negative++;
     }
+    cout << "Нулевых = " << null << endl;
+    cout << "Положительных = " << positive << endl;
+    cout << "Отрицательных = " << negative << endl;
 }
-bool LeapYear(int year)
-{
-    if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
-        return true;
-    return false;
-}
+
 
 
 int main()
@@ -153,12 +147,26 @@ int main()
 
     const int size = 20;
     int arr[size];
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size; i++) {
         arr[i] = rand() % 20;
-
+        cout << arr[i] << "\t";
+        if (i == 9 || i == 19)
+            cout << endl;
+    }
     sredne(arr, size);
 
     playingCard();
+
+    int const size2 = 40;
+    int arr2[size2];
+    for (int i = 0; i < size2; i++) {
+        arr2[i] = rand() % 40 - 20;
+        cout << arr2[i] << "\t";
+        if (i % 10 == 9)
+            cout << endl;
+    }
+    cout << endl;
+    quantity(arr2, size2);
 
     system("pause");
     return 0;
