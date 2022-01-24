@@ -124,6 +124,14 @@ void date() {
     cout << "¬ведите год, пор€дковый номер мес€ца и день окончани€ периода.";
     cin >> endYear >> endMonth >> endDay;
 }
+bool LeapYear(int year)
+{
+    if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
+    {
+        return true;
+    }
+    return false;
+}
 
 
 int main()
