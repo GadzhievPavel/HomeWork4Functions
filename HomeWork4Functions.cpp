@@ -118,18 +118,21 @@ void playingCard() {
 }
 
 void date() {
-    int startYear, startMonth, startDay, endYear, endMonth, endDay;
+    int startYear, startMonth, startDay, endYear, endMonth, endDay, int sumDay = 0;
     cout << "¬ведите год, пор€дковый номер мес€ца и день начала периода.";
     cin >> startYear >> startMonth >> startDay;
     cout << "¬ведите год, пор€дковый номер мес€ца и день окончани€ периода.";
     cin >> endYear >> endMonth >> endDay;
+    for (int i = startYear + 1; i < endYear; i++) {
+        if (LeapYear)
+            sumDay += 366;
+        sumDay += 365;
+    }
 }
 bool LeapYear(int year)
 {
     if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
-    {
         return true;
-    }
     return false;
 }
 
