@@ -134,16 +134,21 @@ int null = 0, positive = 0, negative = 0;
 int main()
 {
     setlocale(LC_ALL, "ru");
+    srand(time(0));
 
     cout << exp(3, 2) << endl;
+    cout << endl;
 
     cout << sum(2, 5) << endl;
+    cout << endl;
 
     perfect(1, 10000);
+    cout << endl;
     cout << endl;
 
 
     (Happy()) ? cout << "Счастливое." << endl : cout << "Не счастливое." << endl << endl;
+    cout << endl;
 
     const int size = 20;
     int arr[size];
@@ -154,8 +159,10 @@ int main()
             cout << endl;
     }
     sredne(arr, size);
+    cout << endl;
 
     playingCard();
+    cout << endl;
 
     int const size2 = 40;
     int arr2[size2];
